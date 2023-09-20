@@ -1,9 +1,12 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
-
 import org.junit.jupiter.api.Assertions;
 
+import org.junit.jupiter.api.Test;
+
+/**
+ * Main class for the tests
+ */
 public class MainTest {
     @Test
     void test1() {
@@ -11,8 +14,9 @@ public class MainTest {
                  sorted = {3, 4, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 10, 12, 13, 14, 14};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -21,8 +25,9 @@ public class MainTest {
                 sorted = {0, 0, 0, 0, 0, 0, 0};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -31,8 +36,9 @@ public class MainTest {
                  sorted = {-79, -66, -63, -35, 10, 13, 20, 23, 32, 35, 36, 43, 46, 63, 66, 71, 79, 83, 90, 94};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -41,8 +47,9 @@ public class MainTest {
                 sorted =  {2147483640, 2147483641, 2147483642, 2147483643, 2147483644, 2147483645, 2147483646, 2147483647};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -51,8 +58,9 @@ public class MainTest {
                  sorted = {-2147483647, -2147483646, -2147483645, -2147483644, -2147483643, -2147483642, -2147483641, -2147483640};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -61,8 +69,9 @@ public class MainTest {
                  sorted = {-2147483647, 2147483647};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -71,8 +80,9 @@ public class MainTest {
                  sorted = {828514, 1155942, 1225390, 2309890, 2667067, 2684175, 2730642, 3028952, 3535193, 4213291, 4555449, 4560173, 4753014, 6584937, 8540634, 8603666, 9422811};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -81,8 +91,9 @@ public class MainTest {
                  sorted = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -91,8 +102,9 @@ public class MainTest {
                  sorted = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
 
     @Test
@@ -101,8 +113,9 @@ public class MainTest {
                  sorted = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
         int n = notSorted.length;
         Main.pyrSort(notSorted);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             Assertions.assertEquals(notSorted[i], sorted[i]);
+        }
     }
     @Test
     void doINeedToCheckDefaultConstructor() {

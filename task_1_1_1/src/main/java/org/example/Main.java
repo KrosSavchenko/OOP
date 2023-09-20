@@ -5,10 +5,7 @@ package org.example;
  */
 public class Main {
     public static void main(String[] args) {
-        int a = 1, b = 10;
-        int[] den = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        pyrSort(den);
-        PrintArray(den);
+
     }
 
     public static void CorrectSortTree(int[] arr, int n, int i) {
@@ -43,10 +40,5 @@ public class Main {
         int tmp = arr[indx1];
         arr[indx1] = arr[indx2];
         arr[indx2] = tmp;
-    }
-
-    public static void PrintArray(int[] arr){
-        for (int x : arr)
-            System.out.println(x);
     }
 }
