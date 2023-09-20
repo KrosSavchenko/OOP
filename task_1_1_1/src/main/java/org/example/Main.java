@@ -1,19 +1,52 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+/**
+ * Main class.
+ */
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int a = 1, b = 10;
+        int[] den = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        pyrSort(den);
+        PrintArray(den);
+    }
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    public static void CorrectSortTree(int[] arr, int n, int i) {
+        int l = 2 * i + 1,
+            r = 2 * i + 2,
+            i_max = i;
+        if (l < n && arr[l] > arr[i_max])
+            i_max = l;
+        if (r < n && arr[r] > arr[i_max])
+            i_max = r;
+        if (i_max != i){
+            SwapElemArray(arr, i, i_max);
+            CorrectSortTree(arr, n, i_max);
         }
+    }
+
+    public static void pyrSort(int[] arr) {
+        int len = arr.length,
+            n = len / 2 - 1;
+
+        for (int i = n; i >= 0; i--)
+            CorrectSortTree(arr, len, i);
+
+        for (int i = len - 1; i > 0; i--){
+            SwapElemArray(arr, 0, i);
+            CorrectSortTree(arr, i, 0);
+        }
+
+    }
+
+    public static void SwapElemArray(int[] arr, int indx1, int indx2) {
+        int tmp = arr[indx1];
+        arr[indx1] = arr[indx2];
+        arr[indx2] = tmp;
+    }
+
+    public static void PrintArray(int[] arr){
+        for (int x : arr)
+            System.out.println(x);
     }
 }
