@@ -1,7 +1,6 @@
 package org.example;
 
 import org.junit.jupiter.api.Assertions;
-
 import org.junit.jupiter.api.Test;
 
 /** Main class for the tests.*/
@@ -103,6 +102,7 @@ public class MainTest {
             Assertions.assertEquals(notSorted[i], sorted[i]);
         }
     }
+
     @Test
     void test9SixteenNumbers() {
         int[] notSorted = {6, 11, 8, 12, 9, 3, 14, 13, 2, 5, 10, 1, 7, 4, 16, 15};

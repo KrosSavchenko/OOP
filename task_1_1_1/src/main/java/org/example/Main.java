@@ -10,6 +10,7 @@ public class Main {
 
     /**
      * Corrects the sorting tree.
+     *
      * @param arr Sorting tree vertex array
      * @param n Quantity vertex
      * @param i Vertex from which the correction begins
@@ -24,12 +25,17 @@ public class Main {
         if (r < n && arr[r] > arr[iMax]) {
             iMax = r;
         }
-        if (iMax != i){
-            SwapElemArray(arr, i, iMax);
+        if (iMax != i) {
+            swapElemArray(arr, i, iMax);
             correctSortTree(arr, n, iMax);
         }
     }
 
+    /**
+     * Function for headsort
+     *
+     * @param arr Array for sorting
+     */
     public static void pyrSort(int[] arr) {
         int len = arr.length;
         int n = len / 2 - 1;
@@ -38,16 +44,23 @@ public class Main {
             correctSortTree(arr, len, i);
         }
 
-        for (int i = len - 1; i > 0; i--){
-            SwapElemArray(arr, 0, i);
+        for (int i = len - 1; i > 0; i--) {
+            swapElemArray(arr, 0, i);
             correctSortTree(arr, i, 0);
         }
 
     }
 
-    public static void SwapElemArray(int[] arr, int indx1, int indx2) {
-        int tmp = arr[indx1];
-        arr[indx1] = arr[indx2];
-        arr[indx2] = tmp;
+    /**
+     * Function for swap elements with index i1 and i2.
+     *
+     * @param arr Array
+     * @param i1 First index
+     * @param i2 Second index
+     */
+    public static void swapElemArray(int[] arr, int i1, int i2) {
+        int tmp = arr[i1];
+        arr[i1] = arr[i2];
+        arr[i2] = tmp;
     }
 }
