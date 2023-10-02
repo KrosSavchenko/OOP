@@ -8,30 +8,39 @@ public class Main {
 
     }
 
-    public static void CorrectSortTree(int[] arr, int n, int i) {
-        int l = 2 * i + 1,
-            r = 2 * i + 2,
-            i_max = i;
-        if (l < n && arr[l] > arr[i_max])
-            i_max = l;
-        if (r < n && arr[r] > arr[i_max])
-            i_max = r;
-        if (i_max != i){
-            SwapElemArray(arr, i, i_max);
-            CorrectSortTree(arr, n, i_max);
+    /**
+     * Corrects the sorting tree.
+     * @param arr Sorting tree vertex array
+     * @param n Quantity vertex
+     * @param i Vertex from which the correction begins
+     */
+    public static void correctSortTree(int[] arr, int n, int i) {
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
+        int iMax = i;
+        if (l < n && arr[l] > arr[iMax]) {
+            iMax = l;
+        }
+        if (r < n && arr[r] > arr[iMax]) {
+            iMax = r;
+        }
+        if (iMax != i){
+            SwapElemArray(arr, i, iMax);
+            correctSortTree(arr, n, iMax);
         }
     }
 
     public static void pyrSort(int[] arr) {
-        int len = arr.length,
-            n = len / 2 - 1;
+        int len = arr.length;
+        int n = len / 2 - 1;
 
-        for (int i = n; i >= 0; i--)
-            CorrectSortTree(arr, len, i);
+        for (int i = n; i >= 0; i--) {
+            correctSortTree(arr, len, i);
+        }
 
         for (int i = len - 1; i > 0; i--){
             SwapElemArray(arr, 0, i);
-            CorrectSortTree(arr, i, 0);
+            correctSortTree(arr, i, 0);
         }
 
     }
