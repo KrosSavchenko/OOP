@@ -2,16 +2,6 @@ package ru.nsu.savchenko;
 
 import java.util.Arrays;
 
-public class Main {
-    public static void main(String[] args) {
-        int[] arr1 = {0, 1, 2, 3, 4};
-        int[] arr2 = {0, 1, 2, 3, 4};
-        Polynomial p1 = new Polynomial(arr1);
-        Polynomial p2 = new Polynomial(new int[] {0});
-        System.out.println((p1.minus(p1)).equals(p2));
-    }
-}
-
 class Polynomial {
     int dim;
     int[] odd;
@@ -38,15 +28,14 @@ class Polynomial {
         System.arraycopy(odds, 0, odd, 0, dim);
     }
 
-    public Polynomial plus (Polynomial other) {
+    public Polynomial plus(Polynomial other) {
         Polynomial res;
         if (this.dim > other.dim) {
             res = new Polynomial(this.odd);
             for (int i = 0; i < other.dim; i++) {
                 res.odd[i] += other.odd[i];
             }
-        }
-        else {
+        } else {
             res = new Polynomial(other.odd);
             for (int i = 0; i < this.dim; i++) {
                 res.odd[i] += this.odd[i];
@@ -55,7 +44,7 @@ class Polynomial {
         return res;
     }
 
-    public Polynomial minus (Polynomial other) {
+    public Polynomial minus(Polynomial other) {
         Polynomial res = new Polynomial(other.odd);
         for (int i = 0; i < res.dim; i++) {
             res.odd[i] *= -1;
@@ -63,13 +52,13 @@ class Polynomial {
 
         res = this.plus(res);
 
-        while (res.dim - 1 > 0 && res.odd[res.dim - 1] == 0){
+        while (res.dim - 1 > 0 && res.odd[res.dim - 1] == 0) {
             res.dim--;
         }
         return res;
     }
 
-    public Polynomial times (Polynomial other) {
+    public Polynomial times(Polynomial other) {
         int n = this.dim + other.dim - 1;
         Polynomial res = new Polynomial(n);
         res.dim = n;
@@ -81,7 +70,7 @@ class Polynomial {
         return res;
     }
 
-    public int evaluate (int num) {
+    public int evaluate(int num) {
         int res = 0;
         int pow = 1;
         for (int i = 0; i < dim; i++) {
@@ -107,8 +96,7 @@ class Polynomial {
                 res.odd[i] = odd[i + 1] * (i + 1);
             }
             return res;
-        }
-        else {
+        } else {
             return this.differentiate(1).differentiate(power - 1);
         }
     }

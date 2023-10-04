@@ -135,7 +135,7 @@ class PolynomialTest {
         Assertions.assertTrue((p1.times(p2)).equals(
             new Polynomial(new int[] {10, 40, 70, 100, 80})));
         p1 = new Polynomial(new int[] {-5, 2, 8, -3, -3, 0, 1, 0, 1});
-        p2 = new Polynomial(new int[] {21, -9, -4, 0 , 5, 0, 3});
+        p2 = new Polynomial(new int[] {21, -9, -4, 0, 5, 0, 3});
         Assertions.assertTrue((p1.times(p2)).equals(new Polynomial(
             new int[] {-105, 87, 170, -143, -93, 49, 58, -18, 26, -18, -8, 0, 8, 0, 3})));
     }
