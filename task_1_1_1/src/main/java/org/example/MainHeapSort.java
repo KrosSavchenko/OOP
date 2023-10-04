@@ -3,7 +3,7 @@ package org.example;
 /**
  * Main class.
  */
-public class Main {
+public class MainHeapSort {
     public static void main(String[] args) {
 
     }
