@@ -16,23 +16,23 @@ public class Main {
      * @param i Vertex from which the correction begins
      */
     public static void correctSortTree(int[] arr, int n, int i) {
-        int l = 2 * i + 1;
-        int r = 2 * i + 2;
-        int iMax = i;
-        if (l < n && arr[l] > arr[iMax]) {
-            iMax = l;
+        int leftChild = 2 * i + 1;
+        int rightChild = 2 * i + 2;
+        int indxMax = i;
+        if (leftChild < n && arr[leftChild] > arr[indxMax]) {
+            indxMax = leftChild;
         }
-        if (r < n && arr[r] > arr[iMax]) {
-            iMax = r;
+        if (rightChild < n && arr[rightChild] > arr[indxMax]) {
+            indxMax = rightChild;
         }
-        if (iMax != i) {
-            swapElemArray(arr, i, iMax);
-            correctSortTree(arr, n, iMax);
+        if (indxMax != i) {
+            swapElemArray(arr, i, indxMax);
+            correctSortTree(arr, n, indxMax);
         }
     }
 
     /**
-     * Function for headsort
+     * Function for heapsort.
      *
      * @param arr Array for sorting
      */
