@@ -1,21 +1,22 @@
 package ru.nsu.savchenko;
 
 import java.util.Arrays;
-
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 public class Polynomial {
     int dim;
     int[] odd;
 
-//    Polynomial() {
-//        dim = 0;
-//        odd = new int[] {};
-//    }
-//
-//    Polynomial(int n) {
-//        dim = n;
-//        odd = new int[n];
-//        Arrays.fill(odd, 0);
-//    }
+    Polynomial() {
+        dim = 0;
+        odd = new int[] {};
+    }
+
+    Polynomial(int n) {
+        dim = n;
+        odd = new int[n];
+        Arrays.fill(odd, 0);
+    }
 
     Polynomial(int[] odds) {
         dim = odds.length;
