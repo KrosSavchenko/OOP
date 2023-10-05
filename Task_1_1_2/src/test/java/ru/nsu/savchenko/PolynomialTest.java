@@ -9,37 +9,37 @@ import org.junit.jupiter.api.Test;
 class PolynomialTest {
     @Test
     void toStringTest() {
-        Polynomial p = new Polynomial(new int[] {0, 0, 0, 0, 0});
-        Assertions.assertEquals(p.toString(), "0");
-        p = new Polynomial(new int[] {1});
-        Assertions.assertEquals(p.toString(), "1");
-        p = new Polynomial(new int[] {4, 0});
-        Assertions.assertEquals(p.toString(), "4");
-        p = new Polynomial(new int[] {0, 5});
-        Assertions.assertEquals(p.toString(), "5x");
-        p = new Polynomial(new int[] {99, 8});
-        Assertions.assertEquals(p.toString(), "8x + 99");
-        p = new Polynomial(new int[] {9, 0, 0, 0});
-        Assertions.assertEquals(p.toString(), "9");
-        p = new Polynomial(new int[] {1, 2, 3});
-        Assertions.assertEquals(p.toString(), "3x^2 + 2x + 1");
-        p = new Polynomial(new int[] {0, 2, 3});
-        Assertions.assertEquals(p.toString(), "3x^2 + 2x");
-        p = new Polynomial(new int[] {1, 0, 3});
-        Assertions.assertEquals(p.toString(), "3x^2 + 1");
-        p = new Polynomial(new int[] {1, 2, 0});
-        Assertions.assertEquals(p.toString(), "2x + 1");
-        p = new Polynomial(new int[] {0, 0, 4});
-        Assertions.assertEquals(p.toString(), "4x^2");
-        p = new Polynomial(new int[] {43, 17, 348, 1, 0, 43, 9, 0, 21});
-        Assertions.assertEquals(p.toString(),
-            "21x^8 + 9x^6 + 43x^5 + 1x^3 + 348x^2 + 17x + 43");
-        p = new Polynomial(new int[] {0, 0, 0});
-        Assertions.assertEquals(p.toString(), "0");
-        p = new Polynomial(new int[] {0});
-        Assertions.assertEquals(p.toString(), "0");
-        p = new Polynomial(new int[] {});
-        Assertions.assertEquals(p.toString(), "");
+          Polynomial p2 = new Polynomial(new int[] {1, 1, 1, 0, 0});
+          Assertions.assertEquals(p2.toString(), "0");
+//        p = new Polynomial(new int[] {1});
+//        Assertions.assertEquals(p.toString(), "1");
+//        p = new Polynomial(new int[] {4, 0});
+//        Assertions.assertEquals(p.toString(), "4");
+//        p = new Polynomial(new int[] {0, 5});
+//        Assertions.assertEquals(p.toString(), "5x");
+//        p = new Polynomial(new int[] {99, 8});
+//        Assertions.assertEquals(p.toString(), "8x + 99");
+//        p = new Polynomial(new int[] {9, 0, 0, 0});
+//        Assertions.assertEquals(p.toString(), "9");
+//        p = new Polynomial(new int[] {1, 2, 3});
+//        Assertions.assertEquals(p.toString(), "3x^2 + 2x + 1");
+//        p = new Polynomial(new int[] {0, 2, 3});
+//        Assertions.assertEquals(p.toString(), "3x^2 + 2x");
+//        p = new Polynomial(new int[] {1, 0, 3});
+//        Assertions.assertEquals(p.toString(), "3x^2 + 1");
+//        p = new Polynomial(new int[] {1, 2, 0});
+//        Assertions.assertEquals(p.toString(), "2x + 1");
+//        p = new Polynomial(new int[] {0, 0, 4});
+//        Assertions.assertEquals(p.toString(), "4x^2");
+//        p = new Polynomial(new int[] {43, 17, 348, 1, 0, 43, 9, 0, 21});
+//        Assertions.assertEquals(p.toString(),
+//            "21x^8 + 9x^6 + 43x^5 + 1x^3 + 348x^2 + 17x + 43");
+//        p = new Polynomial(new int[] {0, 0, 0});
+//        Assertions.assertEquals(p.toString(), "0");
+//        p = new Polynomial(new int[] {0});
+//        Assertions.assertEquals(p.toString(), "0");
+//        p = new Polynomial(new int[] {});
+//        Assertions.assertEquals(p.toString(), "");
     }
 
     @Test

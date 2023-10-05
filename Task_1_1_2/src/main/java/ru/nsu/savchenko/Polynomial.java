@@ -2,20 +2,20 @@ package ru.nsu.savchenko;
 
 import java.util.Arrays;
 
-class Polynomial {
+public class Polynomial {
     int dim;
     int[] odd;
 
-    Polynomial() {
-        dim = 0;
-        odd = new int[] {};
-    }
-
-    Polynomial(int n) {
-        dim = n;
-        odd = new int[n];
-        Arrays.fill(odd, 0);
-    }
+//    Polynomial() {
+//        dim = 0;
+//        odd = new int[] {};
+//    }
+//
+//    Polynomial(int n) {
+//        dim = n;
+//        odd = new int[n];
+//        Arrays.fill(odd, 0);
+//    }
 
     Polynomial(int[] odds) {
         dim = odds.length;
@@ -26,6 +26,7 @@ class Polynomial {
         }
         odd = new int[dim];
         System.arraycopy(odds, 0, odd, 0, dim);
+
     }
 
     public Polynomial plus(Polynomial other) {
@@ -80,7 +81,7 @@ class Polynomial {
         return res;
     }
 
-    public Polynomial differentiate (int power) {
+    public Polynomial differentiate(int power) {
         if (power <= 0) {
             return new Polynomial(this.odd);
         }
@@ -101,7 +102,7 @@ class Polynomial {
         }
     }
 
-    public boolean equals (Polynomial other) {
+    public boolean equals(Polynomial other) {
         if (this.dim != other.dim) {
             return false;
         }
@@ -135,7 +136,7 @@ class Polynomial {
         i--;
         while (i > 1) {
             if (odd[i] != 0) {
-                    res = res.concat(" + " + odd[i] + "x^" + i);
+                res = res.concat(" + " + odd[i] + "x^" + i);
             }
             i--;
         }
