@@ -34,6 +34,7 @@ public class Polynomial {
 
     /**
      * Method for adding two polynomials.
+     *
      * @param other A polynomial that is added to the current one.
      * @return A polynomial that is the sum of two polynomials.
      */
@@ -55,6 +56,7 @@ public class Polynomial {
 
     /**
      * Method for subtraction two polynomials.
+     *
      * @param other A polynomial that is subtracted from the current one.
      * @return A polynomial that is the difference of two polynomials.
      */
@@ -74,6 +76,7 @@ public class Polynomial {
 
     /**
      * Method for multiplication two polynomials.
+     *
      * @param other A polynomial that is multiplied from the current one.
      * @return A polynomial that is the multiplication of two polynomials.
      */
@@ -91,6 +94,7 @@ public class Polynomial {
 
     /**
      * Method for calculating the value of a polynomial at a point.
+     *
      * @param num The value that is substituted into the polynomial.
      * @return Value of a polynomial at a point.
      */
@@ -106,6 +110,7 @@ public class Polynomial {
 
     /**
      * Method that finds the derivative of a degree Power.
+     *
      * @param power Degree of derivative to be found.
      * @return Derivative of degree Power
      */
@@ -132,6 +137,7 @@ public class Polynomial {
 
     /**
      * Checks if the current polynomial is equal to another.
+     *
      * @param other Polynomial with which the current one is compared.
      * @return True if polynomials equal and false else.
      */
@@ -148,6 +154,8 @@ public class Polynomial {
     }
 
     /**
+     * Writes a polynomial as a string.
+     *
      * @return String representation of a polynomial.
      */
     public String toString() {
