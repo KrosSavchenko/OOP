@@ -1,6 +1,9 @@
 package org.example;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
+import java.util.Stack;
 
 /**
  * Class of trees.
@@ -8,17 +11,27 @@ import java.util.*;
  * @param <T> Type of value of vertex.
  */
 public class Tree<T> implements Iterable<Tree<T>>  {
+    public static void main(String[] args) {
+
+    }
+
     T value;
     ArrayList<Tree<T>> childs;
     Tree<T> parent;
     private boolean iterating;
     private boolean warning;
-    int iter = 0; // 0 - BFS, DFS another
+    int iter; // 0 - BFS, DFS another
 
+    /**
+     * Construction of class.
+     *
+     * @param value Value of vertex
+     */
     public Tree(T value) {
         this.value = value;
         childs = new ArrayList<Tree<T>>();
         parent = null;
+        iter = 0;
         iterating = false;
         warning = false;
     }
@@ -78,10 +91,10 @@ public class Tree<T> implements Iterable<Tree<T>>  {
             this.iter = 0;
             other.iter = 0;
         }
-        IteratorBFS i1 = (IteratorBFS) this.iterator();
-        IteratorBFS i2 = (IteratorBFS) other.iterator();
+        Iterator_bfs i1 = (Iterator_bfs) this.iterator();
+        Iterator_bfs i2 = (Iterator_bfs) other.iterator();
         while (i1.hasNext() && i2.hasNext()) {
-            if (i1.next() != i2.next()){
+            if (i1.next() != i2.next()) {
                 return false;
             }
         }
@@ -107,17 +120,16 @@ public class Tree<T> implements Iterable<Tree<T>>  {
     @Override
     public java.util.Iterator<Tree<T>> iterator() {
         if (iter == 0) {
-            return new IteratorBFS(this);
-        }
-        else {
-            return new IteratorDFS(this);
+            return new Iterator_bfs(this);
+        } else {
+            return new Iterator_dfs(this);
         }
     }
 
-    class IteratorDFS implements java.util.Iterator<Tree<T>> {
+    class Iterator_dfs implements java.util.Iterator<Tree<T>> {
         Stack<Tree<T>> st;
 
-        public IteratorDFS(Tree<T> start) {
+        public Iterator_dfs(Tree<T> start) {
             st = new Stack<>();
             st.push(start);
             Tree<T> head = start.getHead();
@@ -147,10 +159,10 @@ public class Tree<T> implements Iterable<Tree<T>>  {
         }
     }
 
-    class IteratorBFS implements java.util.Iterator<Tree<T>> {
+    class Iterator_bfs implements java.util.Iterator<Tree<T>> {
         ArrayDeque<Tree<T>> queue;
 
-        public IteratorBFS(Tree<T> start) {
+        public Iterator_bfs(Tree<T> start) {
             queue = new ArrayDeque<>();
             queue.addLast(start);
             Tree<T> head = start.getHead();
