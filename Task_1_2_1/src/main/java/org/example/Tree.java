@@ -18,6 +18,9 @@ public class Tree<T> implements Iterable<Tree<T>>  {
     private boolean warning;
     TypeFirstSearch fs = TypeFirstSearch.BFS;
 
+    /**
+     * Selecting type outside the tree.
+     */
     public enum TypeFirstSearch {
         DFS,
         BFS
