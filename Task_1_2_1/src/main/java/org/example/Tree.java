@@ -11,13 +11,17 @@ import java.util.Stack;
  * @param <T> Type of value of vertex.
  */
 public class Tree<T> implements Iterable<Tree<T>>  {
-
     T value;
     ArrayList<Tree<T>> childs;
     Tree<T> parent;
     private boolean iterating;
     private boolean warning;
-    int iter; // 0 - BFS, DFS another
+    TypeFirstSearch fs = TypeFirstSearch.BFS;
+
+    public enum TypeFirstSearch {
+        DFS,
+        BFS
+    }
 
     /**
      * Construction of class.
@@ -28,7 +32,6 @@ public class Tree<T> implements Iterable<Tree<T>>  {
         this.value = value;
         childs = new ArrayList<Tree<T>>();
         parent = null;
-        iter = 0;
         iterating = false;
         warning = false;
     }
@@ -62,9 +65,6 @@ public class Tree<T> implements Iterable<Tree<T>>  {
      * Remove current list or subtree.
      */
     void remove() {
-        if (parent == null) {
-            System.exit(1);
-        }
         Tree<T> head = this.getHead();
         if (head.iterating) {
             head.warning = true;
@@ -80,13 +80,18 @@ public class Tree<T> implements Iterable<Tree<T>>  {
     /**
      * Tests two trees for equality.
      *
-     * @param other The tree that is compared with the current one.
+     * @param obj The tree that is compared with the current one.
      * @return True if the trees are equal, otherwise false.
      */
-    boolean equals(Tree<T> other) {
-        if (this.iter != other.iter) {
-            this.iter = 0;
-            other.iter = 0;
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Tree<T> other = (Tree<T>) obj;
+        if (this.fs != other.fs) {
+            this.fs = TypeFirstSearch.BFS;
+            other.fs = TypeFirstSearch.BFS;
         }
         java.util.Iterator<Tree<T>> i1 = this.iterator();
         java.util.Iterator<Tree<T>> i2 = other.iterator();
@@ -116,7 +121,7 @@ public class Tree<T> implements Iterable<Tree<T>>  {
 
     @Override
     public java.util.Iterator<Tree<T>> iterator() {
-        if (iter == 0) {
+        if (fs == TypeFirstSearch.BFS) {
             return new IteratorBfs(this);
         } else {
             return new IteratorDfs(this);
