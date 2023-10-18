@@ -8,29 +8,12 @@ import java.util.*;
  * @param <T> Type of value of vertex.
  */
 public class Tree<T> implements Iterable<Tree<T>>  {
-    public static void main(String[] args) {
-        Tree<String> tree = new Tree<>("R1");
-        Tree<String> a = tree.addChild("A");
-        Tree<String> b = a.addChild("B");
-        Tree<String> sub = new Tree<>("R2");
-        Tree<String> c = sub.addChild("C");
-        Tree<String> d = sub.addChild("D");
-        Tree<String> R2 = tree.addChild(sub);
-        //d.remove();
-        c.remove();
-        R2.remove();
-        for (Tree<String> stringTree : tree) {
-            System.out.println(stringTree.value);
-        }
-        System.out.println(R2.equals(tree));
-    }
     T value;
     ArrayList<Tree<T>> childs;
     Tree<T> parent;
     private boolean iterating;
     private boolean warning;
     int iter = 0; // 0 - BFS, DFS another
-
 
     public Tree(T value) {
         this.value = value;
@@ -91,8 +74,10 @@ public class Tree<T> implements Iterable<Tree<T>>  {
      * @return True if the trees are equal, otherwise false.
      */
     boolean equals(Tree<T> other) {
-        this.iter = 0;
-        other.iter = 0;
+        if (this.iter != other.iter) {
+            this.iter = 0;
+            other.iter = 0;
+        }
         IteratorBFS i1 = (IteratorBFS) this.iterator();
         IteratorBFS i2 = (IteratorBFS) other.iterator();
         while (i1.hasNext() && i2.hasNext()) {
