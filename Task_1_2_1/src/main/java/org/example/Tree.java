@@ -11,9 +11,6 @@ import java.util.Stack;
  * @param <T> Type of value of vertex.
  */
 public class Tree<T> implements Iterable<Tree<T>>  {
-    public static void main(String[] args) {
-
-    }
 
     T value;
     ArrayList<Tree<T>> childs;
@@ -91,10 +88,10 @@ public class Tree<T> implements Iterable<Tree<T>>  {
             this.iter = 0;
             other.iter = 0;
         }
-        Iterator_bfs i1 = (Iterator_bfs) this.iterator();
-        Iterator_bfs i2 = (Iterator_bfs) other.iterator();
+        java.util.Iterator<Tree<T>> i1 = this.iterator();
+        java.util.Iterator<Tree<T>> i2 = other.iterator();
         while (i1.hasNext() && i2.hasNext()) {
-            if (i1.next() != i2.next()) {
+            if (i1.next().value != i2.next().value) {
                 return false;
             }
         }

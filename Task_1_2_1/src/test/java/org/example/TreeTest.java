@@ -39,11 +39,22 @@ class TreeTest {
         tmp.iter = 1;
         t5.iter = 1;
         t11.iter = 1;
-        t1.iter = 1;
+        t1.iter = 0;
         Assertions.assertTrue(tmp.equals(t5));
         Assertions.assertTrue(t5.equals(tmp));
-        Assertions.assertFalse(t1.equals(t11));
-        Assertions.assertFalse(t11.equals(t1));
+        Assertions.assertTrue(t1.equals(t11));
+        Assertions.assertTrue(t11.equals(t1));
+        Assertions.assertTrue(t11.equals(t1));
+        Tree<Integer> tt5 = new Tree<>(5);
+        Tree<Integer> tt6 = tt5.addChild(6);
+        Tree<Integer> tt7 = tt6.addChild(7);
+        tt5.iter = 1;
+        Assertions.assertTrue(tt5.equals(t5));
+        Assertions.assertTrue(t5.equals(tt5));
+        tt7.addChild(7);
+        Assertions.assertFalse(t5.equals(tt5));
+        Assertions.assertFalse(tt5.equals(t5));
+
     }
 
 
