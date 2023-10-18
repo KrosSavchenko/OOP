@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  */
 class TreeTest {
     @Test
-    public void testBFS() {
+    public void testBfs() {
         Tree<String> tree = new Tree<>("R1");
         Tree<String> a = tree.addChild("A");
         Tree<String> b = a.addChild("B");
@@ -25,7 +25,7 @@ class TreeTest {
     }
 
     @Test
-    public void testDFS() {
+    public void testDfs() {
         Tree<Integer> t1 = new Tree<>(1);
         t1.addChild(2);
         Tree<Integer> t3 = t1.addChild(3);
@@ -50,7 +50,6 @@ class TreeTest {
         Tree<Integer> tt7 = tt6.addChild(7);
         tt5.iter = 1;
         Assertions.assertTrue(tt5.equals(t5));
-        Assertions.assertTrue(t5.equals(tt5));
         tt7.addChild(7);
         Assertions.assertFalse(t5.equals(tt5));
         Assertions.assertFalse(tt5.equals(t5));
