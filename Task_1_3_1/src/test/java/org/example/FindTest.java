@@ -9,6 +9,6 @@ import org.junit.jupiter.api.Test;
 class FindTest {
     @Test
     public void testEquals() {
-        Assertions.assertEquals(1, 1 + 1);
+        Assertions.assertEquals(2, 1 + 1);
     }
 }
