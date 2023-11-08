@@ -9,8 +9,7 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> arr = find("den.txt", "d");
-        System.out.println(arr.toString());
+
     }
 
     /**
