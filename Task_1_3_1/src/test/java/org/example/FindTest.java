@@ -23,6 +23,7 @@ class FindTest {
         first.remove(9999);
         Assertions.assertEquals(Main.find("denis10000.txt", "denis "), first);
     }
+
     @Test
     public void smallFile() {
         ArrayList<Integer> first = new ArrayList<>(1);
@@ -44,5 +45,13 @@ class FindTest {
         ArrayList<Integer> fourth = new ArrayList<>(1);
         fourth.add(-1);
         Assertions.assertEquals(Main.find("123.txt", "321"), fourth);
+    }
+
+    @Test
+    public void emptyFile() {
+        ArrayList<Integer> noanswer = new ArrayList<>(1);
+        noanswer.add(-1);
+        Assertions.assertEquals(Main.find("empty.txt", "=)"), noanswer);
+        Assertions.assertEquals(Main.find("empty.txt", ""), noanswer);
     }
 }
